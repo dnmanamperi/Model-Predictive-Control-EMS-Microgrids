@@ -1,0 +1,43 @@
+! Other 3 feeders at LVBus (upstream of Line.Head)
+new Load.Other3Feeders bus1=LVBus phases=3 conn=wye kv=0.4 kW=10 PF=0.95 model=1
+new Generator.Other3Solar bus1=LVBus phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+
+! Feeder-2 pole loads
+new Load.P1  bus1=Pole1  phases=3 conn=wye kv=0.4 kW=1 PF=0.95 model=1
+new Load.P2  bus1=Pole2  phases=3 conn=wye kv=0.4 kW=1 PF=0.95 model=1
+new Load.P3  bus1=Pole3  phases=3 conn=wye kv=0.4 kW=1 PF=0.95 model=1
+new Load.P4  bus1=Pole4  phases=3 conn=wye kv=0.4 kW=1 PF=0.95 model=1
+new Load.P5  bus1=Pole5  phases=3 conn=wye kv=0.4 kW=1 PF=0.95 model=1
+new Load.P6  bus1=Pole6  phases=3 conn=wye kv=0.4 kW=1 PF=0.95 model=1
+new Load.P7  bus1=Pole7  phases=3 conn=wye kv=0.4 kW=1 PF=0.95 model=1
+new Load.P8  bus1=Pole8  phases=3 conn=wye kv=0.4 kW=1 PF=0.95 model=1
+new Load.P9  bus1=Pole9  phases=3 conn=wye kv=0.4 kW=1 PF=0.95 model=1
+new Load.P10 bus1=Pole10 phases=3 conn=wye kv=0.4 kW=1 PF=0.95 model=1
+new Load.P11 bus1=Pole11 phases=3 conn=wye kv=0.4 kW=1 PF=0.95 model=1
+new Load.P12 bus1=Pole12 phases=3 conn=wye kv=0.4 kW=1 PF=0.95 model=1
+new Load.P13 bus1=Pole13 phases=3 conn=wye kv=0.4 kW=1 PF=0.95 model=1
+new Load.P14 bus1=Pole14 phases=3 conn=wye kv=0.4 kW=1 PF=0.95 model=1
+
+! Feeder-2 scheduled solar
+new Generator.GPV1  bus1=Pole1  phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+new Generator.GPV2  bus1=Pole2  phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+new Generator.GPV3  bus1=Pole3  phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+new Generator.GPV4  bus1=Pole4  phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+new Generator.GPV5  bus1=Pole5  phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+new Generator.GPV6  bus1=Pole6  phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+new Generator.GPV7  bus1=Pole7  phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+new Generator.GPV8  bus1=Pole8  phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+new Generator.GPV9  bus1=Pole9  phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+new Generator.GPV10 bus1=Pole10 phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+new Generator.GPV11 bus1=Pole11 phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+new Generator.GPV12 bus1=Pole12 phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+new Generator.GPV13 bus1=Pole13 phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+new Generator.GPV14 bus1=Pole14 phases=3 conn=wye kv=0.4 kW=0 PF=1 model=1
+
+! Real battery parameters from user
+! 50 kW max charge/discharge, 95% efficiencies, SOC range 20-80, initial SOC 50
+new Storage.BESS phases=3 bus1=PCC conn=wye kv=0.4
+~ kWrated=50 kWhrated=100 kVA=50
+~ %stored=50 %reserve=20 pf=1
+~ %EffCharge=95 %EffDischarge=95
+~ state=idling

@@ -1,0 +1,12 @@
+clear
+set DefaultBaseFrequency=50
+
+new Circuit.Feeder2_HeadMatch_RealBattery basekV=11 pu=1.0 phases=3 bus1=SourceBus
+edit Vsource.Source basekV=11 pu=1.0 phases=3 frequency=50
+
+redirect Feeder_XFMR_OtherFeeders_HeadMatch_RealBattery.dss
+redirect Elements_XFMR_OtherFeeders_HeadMatch_RealBattery.dss
+
+set voltagebases=[11, 0.4]
+calcvoltagebases
+solve
